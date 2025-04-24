@@ -10,8 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.get('/mmtcprice', async (req, res) => {
   let browser;
   try {
-     browser = await puppeteer.launch({
-      executablePath: puppeteer.executablePath(),
+      browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
       headless: true
     });
