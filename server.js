@@ -9,7 +9,8 @@ app.get('/mmtcprice', async (req, res) => {
   let browser;
   try {
     browser = await puppeteer.launch({
-      args: ['--no-sandbox','--disable-setuid-sandbox']
+      executablePath: '/usr/bin/google-chrome-stable',  // path to Chrome
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
     await page.goto('https://www.mmtcpamp.com/', { waitUntil: 'networkidle2' });
@@ -37,6 +38,8 @@ app.get('/mmtcprice', async (req, res) => {
     if (browser) await browser.close();
   }
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`MMTC-PAMP scraper listening on port ${PORT}`);
