@@ -8,9 +8,10 @@ const PORT = process.env.PORT || 3000;
 app.get('/mmtcprice', async (req, res) => {
   let browser;
   try {
-    browser = await puppeteer.launch({
-      executablePath: '/usr/bin/google-chrome-stable',  // path to Chrome
-  args: ['--no-sandbox', '--disable-setuid-sandbox']
+     browser = await puppeteer.launch({
+      executablePath: puppeteer.executablePath(),
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      headless: true
     });
     const page = await browser.newPage();
     await page.goto('https://www.mmtcpamp.com/', { waitUntil: 'networkidle2' });
