@@ -1,0 +1,17 @@
+{
+  "name": "gold-price-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "npx puppeteer install chrome"
+  },
+  "puppeteer": {
+    "default_browser": "chrome"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^21.3.8"
+  }
+}
