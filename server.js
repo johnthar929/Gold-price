@@ -1,4 +1,8 @@
 // server.js
+// at the top of server.js
+const express  = require('express');
+const puppeteer = require('puppeteer');
+
 import express from 'express';
 import puppeteer from 'puppeteer';
 
